@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="850" pageHeight="842" columnWidth="810" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c72c4f5-29d4-4b93-b7d4-a841d9691507">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     student.`First_Name` AS student_First_Name,
+     student.`Last_Name` AS student_Last_Name,
+     student.`Meal_Card_ID` AS student_Meal_Card_ID,
+     student.`Sex` AS student_Sex,
+     student.`Department` AS student_Department,
+     student.`Year` AS student_Year,
+     meal_program.`Meal_Date` AS meal_program_Meal_Date,
+     meal_program.`Meal_Type` AS meal_program_Meal_Type,
+     totalstudent.`TotalStudent` AS totalstudent_TotalStudent,
+     meal_program.`Meal_Status` AS meal_program_Meal_Status,
+     meal_program.`Employee_ID` AS meal_program_Employee_ID
+FROM
+     `student` student INNER JOIN `meal_program` meal_program ON student.`Meal_Card_ID` = meal_program.`Meal_Card_ID`,
+     `totalstudent` totalstudent]]>
+	</queryString>
+	<field name="student_First_Name" class="java.lang.String"/>
+	<field name="student_Last_Name" class="java.lang.String"/>
+	<field name="student_Meal_Card_ID" class="java.lang.Integer"/>
+	<field name="student_Sex" class="java.lang.String"/>
+	<field name="student_Department" class="java.lang.String"/>
+	<field name="student_Year" class="java.lang.String"/>
+	<field name="meal_program_Meal_Date" class="java.sql.Date"/>
+	<field name="meal_program_Meal_Type" class="java.lang.String"/>
+	<field name="totalstudent_TotalStudent" class="java.lang.Long"/>
+	<field name="meal_program_Meal_Status" class="java.lang.String"/>
+	<field name="meal_program_Employee_ID" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="175" y="0" width="460" height="29" forecolor="#3300CC" uuid="fffacea0-0961-453e-83dc-9f585a0c366e"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEBRE BERIHAN UNIVERSITY]]></text>
+			</staticText>
+			<image>
+				<reportElement x="623" y="0" width="175" height="79" uuid="12f12b03-d1bf-4c69-8aa2-43ae1fb58df0"/>
+				<imageExpression><![CDATA["C:\\Users\\Nathan\\Desktop\\cccccccccccccccccccccccc.PNG"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="0" width="175" height="79" uuid="06944de8-96f4-4a2e-ae2b-1c5e955447e3"/>
+				<imageExpression><![CDATA["C:\\Users\\Nathan\\Desktop\\cccccccccccccccccccccccc.PNG"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="175" y="29" width="460" height="50" forecolor="#CC00CC" uuid="eec85a3d-efd4-48b6-9666-ab10a764298d"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SCHOOL OF COMPUTING DEPARTMENT OF COMPUTER SCIENCE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="179" y="6" width="443" height="20" forecolor="#FF0066" uuid="14a76744-a312-490b-8fe8-b9fad7ec97c8"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STUDENT LIST]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="216bbfdf-fd97-49c6-9081-87312c326b90"/>
+				<text><![CDATA[First_Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="79" height="20" uuid="03edbcf9-dde3-4900-911b-30ed57de2e0e"/>
+				<text><![CDATA[Last_Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="179" y="0" width="79" height="20" uuid="258d2d8d-4464-4909-a683-b8d6ae3f0556"/>
+				<text><![CDATA[Meal_Card_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="258" y="0" width="66" height="20" uuid="0a086d33-c0ea-4f6a-a470-7540d2ac5634"/>
+				<text><![CDATA[Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="0" width="47" height="20" uuid="dc58ef2a-afa6-4e78-a48c-95cc36b9ff62"/>
+				<text><![CDATA[Year]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="0" width="51" height="20" uuid="07473c88-646e-4060-8d02-142f5b335f88"/>
+				<text><![CDATA[Sex]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="0" width="100" height="20" uuid="d4852850-4836-48b9-84dc-8ba01615b6e7"/>
+				<text><![CDATA[Meal_Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="522" y="0" width="100" height="20" uuid="ee6750b4-3085-4cfe-9a98-a6592ded04f4"/>
+				<text><![CDATA[Meal_Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="623" y="0" width="100" height="20" uuid="b8fb896a-c856-4c22-8e5d-11cc3573fbb4"/>
+				<text><![CDATA[Meal_Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="723" y="0" width="87" height="20" uuid="bd306264-5f3d-4140-bf13-34a486decede"/>
+				<text><![CDATA[Employee_ID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="780a4bfd-6f57-46fe-aea6-4fdef5a5fdbd"/>
+				<textFieldExpression><![CDATA[$F{student_First_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="79" height="20" uuid="9aceb38b-0638-4676-baf4-5fd97c12ea6e"/>
+				<textFieldExpression><![CDATA[$F{student_Last_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="179" y="0" width="79" height="20" uuid="c1ed360c-ff54-488b-a2b8-7d70818f1dd9"/>
+				<textFieldExpression><![CDATA[$F{student_Meal_Card_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="0" width="66" height="20" uuid="e028c87e-8a83-4790-9f43-808ab701398f"/>
+				<textFieldExpression><![CDATA[$F{student_Department}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="0" width="47" height="20" uuid="7a6d1d62-9c64-47d5-acfe-c8e2341c1c88"/>
+				<textFieldExpression><![CDATA[$F{student_Year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="0" width="51" height="20" uuid="33791a78-490f-4cd8-a731-c511d2b44cbb"/>
+				<textFieldExpression><![CDATA[$F{student_Sex}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="0" width="100" height="20" uuid="8a9e80b2-f69e-430b-83ac-a43cfa114aad"/>
+				<textFieldExpression><![CDATA[$F{meal_program_Meal_Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="523" y="0" width="100" height="20" uuid="4442444d-c313-431c-a17d-5de5d664bd58"/>
+				<textFieldExpression><![CDATA[$F{meal_program_Meal_Type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="622" y="0" width="100" height="20" uuid="e3201d4a-7c1e-48df-a166-60afa02e6a91"/>
+				<textFieldExpression><![CDATA[$F{meal_program_Meal_Status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="723" y="0" width="87" height="20" uuid="a154e198-a770-4698-9eee-5a5366c18ca7"/>
+				<textFieldExpression><![CDATA[$F{meal_program_Employee_ID}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="55" splitType="Stretch">
+			<textField>
+				<reportElement x="179" y="13" width="100" height="20" uuid="8730861b-fd96-431e-8375-b338e1e95cc5"/>
+				<textFieldExpression><![CDATA[$F{totalstudent_TotalStudent}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="13" width="100" height="20" uuid="f86d26fc-ea94-4585-a012-024e142aa1e9"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Student]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="700" pageHeight="842" columnWidth="660" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1627cf88-bffe-4fcb-b165-79aca0dd082a">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     employee.`First_Name` AS employee_First_Name,
+     employee.`Last_Name` AS employee_Last_Name,
+     employee.`Sex` AS employee_Sex,
+     employee.`DateOfBirth` AS employee_DateOfBirth,
+     employee.`Salary` AS employee_Salary,
+     employee.`Employee_ID` AS employee_Employee_ID,
+     totalemploye.`TotalEmployee` AS totalemploye_TotalEmployee,
+     totalsalary.`TotalSalary` AS totalsalary_TotalSalary
+FROM
+     `employee` employee,
+     `totalemploye` totalemploye,
+     `totalsalary` totalsalary]]>
+	</queryString>
+	<field name="employee_First_Name" class="java.lang.String"/>
+	<field name="employee_Last_Name" class="java.lang.String"/>
+	<field name="employee_Sex" class="java.lang.String"/>
+	<field name="employee_DateOfBirth" class="java.sql.Date"/>
+	<field name="employee_Salary" class="java.lang.Double"/>
+	<field name="employee_Employee_ID" class="java.lang.Integer"/>
+	<field name="totalemploye_TotalEmployee" class="java.lang.Long"/>
+	<field name="totalsalary_TotalSalary" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="162" y="13" width="348" height="20" forecolor="#6600CC" uuid="60f3b4ac-621b-4440-8eaa-36d8f6d4c420"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEBRE BERHAN UNIVERSITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="33" width="336" height="49" forecolor="#FF00CC" uuid="c978f126-52ca-40bf-8077-7d85958ec831"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SCHOOL OF COMPUTING DEPARTMENT OF COMPUTER SCIENCE]]></text>
+			</staticText>
+			<image>
+				<reportElement x="481" y="0" width="182" height="82" uuid="4cc55219-3cab-448f-b5aa-ebe11955af39"/>
+				<imageExpression><![CDATA["C:\\Users\\Nathan\\Desktop\\cccccccccccccccccccccccc.PNG"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="0" width="182" height="82" uuid="6ca27742-e53e-4a48-a143-d2a052bbc08e"/>
+				<imageExpression><![CDATA["C:\\Users\\Nathan\\Desktop\\cccccccccccccccccccccccc.PNG"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="0" width="230" height="28" forecolor="#0000FF" uuid="2ee6a090-dfa7-4cb3-aea8-0fab86bb1744"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMPLOYEE LIST]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="82c38382-ffcf-4317-b4cd-e02e4964efd7"/>
+				<text><![CDATA[Employee_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="61355a5a-260e-4f73-a365-b5f47e4992fd"/>
+				<text><![CDATA[First_Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="209515bb-3ccd-498b-a561-c16dbedf2b0d"/>
+				<text><![CDATA[Last_Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="80" height="20" uuid="0c0cc36b-fa06-4984-8a46-46296453316d"/>
+				<text><![CDATA[Sex]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="100" height="20" uuid="26a65e8a-73d4-4634-b6ae-6f7ee58a9bc4"/>
+				<text><![CDATA[Salary]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="481" y="2" width="74" height="20" uuid="d6286b05-5d98-4123-a7d7-3a4fbc46e303"/>
+				<text><![CDATA[DateOfBirth]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="42804c9f-a6a0-4a51-adb2-508cd1948e3f"/>
+				<textFieldExpression><![CDATA[$F{employee_Employee_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="c13e180a-517d-4abc-a0ee-3d8b4b0c0ff0"/>
+				<textFieldExpression><![CDATA[$F{employee_First_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="7736600b-8026-491e-855b-16ea41630649"/>
+				<textFieldExpression><![CDATA[$F{employee_Last_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="80" height="20" uuid="68a4052b-8f97-4c09-a2f1-660ff4c29ae5"/>
+				<textFieldExpression><![CDATA[$F{employee_Sex}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="100" height="20" uuid="094f45ab-e8af-45a4-ac1d-665edae0430e"/>
+				<textFieldExpression><![CDATA[$F{employee_Salary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="481" y="0" width="74" height="20" uuid="7269acb8-3d8f-4f33-87c4-a4836c4f9714"/>
+				<textFieldExpression><![CDATA[$F{employee_DateOfBirth}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="200" y="49" width="100" height="20" uuid="330f3c9b-6f78-4b4e-bcf9-cded45b9e875"/>
+				<textFieldExpression><![CDATA[$F{totalsalary_TotalSalary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="13" width="100" height="20" uuid="4a5ac70c-4b94-49ff-a16d-8e47ba3b62fb"/>
+				<textFieldExpression><![CDATA[$F{totalemploye_TotalEmployee}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="13" width="100" height="20" uuid="861f5782-17de-43af-90bb-fc7626e0a21e"/>
+				<text><![CDATA[TOTAL EMPLOYEE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="49" width="100" height="20" uuid="addbad4a-baef-43cc-b4ef-24ed27793d9c"/>
+				<text><![CDATA[TOTAL SALARY:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
